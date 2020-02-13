@@ -1,0 +1,17 @@
+<nav class="navbar navbar-dark bg-primary sticky-top">
+  <a class="navbar-brand navbar-left" routerLink="/order-list">Ace Enterprise</a>
+  <div class="row">
+    <div class="col">
+      <div ngbDropdown class="d-inline-block">
+        <button class="btn btn-outline-success text-white" id="dropdownBasic1" ngbDropdownToggle>
+          Create Listdown
+        </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button ngbDropdownItem routerLink="/company">Create Company</button>
+          <button ngbDropdownItem routerLink="/product">Create Product</button>
+          <button ngbDropdownItem routerLink="/order">Create order</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,54 @@
+<div class="container">  
+  <div class="row my-3">
+    <div class="col-sm-4" *ngFor="let orderDetail of objectsFromOrderDetailStorage">
+      <div class="card border-success mb-3" style="max-width: 20rem;">
+        <div class="card-header bg-transparent border-success">
+          <div class="row">
+            <div class="col-6">
+              Company Name
+            </div>
+            <div class="col-6">
+              <span class="float-right">{{orderDetail.companyName}}</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-6">
+              Product Name
+            </div>
+            <div class="col-6">
+              <span class="float-right">{{orderDetail.productName}}</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              Product Rate
+            </div>
+            <div class="col-6">
+              <span class="float-right">{{orderDetail.rate}}</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              Product Cost
+            </div>
+            <div class="col-6">
+              <span class="float-right">{{orderDetail.cost}}</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer bg-transparent border-success">
+          <div class="row">
+            <div class="col-6">
+              Total Cost
+            </div>
+            <div class="col-6">
+              <span class="float-right">{{orderDetail.totalCost}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

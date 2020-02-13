@@ -1,0 +1,36 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="form-group col-sm-6 col-xs-12 col-md-6">
+      <label for="orderCompany">Company</label>
+      <select id="orderCompany" class="form-control" [(ngModel)]="orderDetail.companyName">
+        <option *ngFor="let company of objectsFromCompanyStorage" [value]="company.companyName">{{company.companyName}}</option>
+      </select>
+    </div>
+    <div class="form-group col-sm-6 col-xs-12 col-md-6">
+      <label for="orderCompany">Product name</label>
+      <select id="orderCompany" class="form-control" [(ngModel)]="orderDetail.productName">
+        <option *ngFor="let product of objectsFromProductStorage" [value]="product.productName">{{product.productName}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-sm-6 col-xs-12 col-md-6">
+      <label for="orderProductRate">Product Rate</label>
+      <input type="number" class="form-control" [(ngModel)]="orderDetail.rate" id="orderProductRate" placeholder="Enter product rate">
+    </div>
+    <div class="form-group col-sm-6 col-xs-12 col-md-6">
+      <label for="orderProductCost">Product Cost</label>
+      <input type="number" class="form-control" [(ngModel)]="orderDetail.cost" id="orderProductCost" placeholder="Enter product cost">
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-sm-6 col-xs-12 col-md-6">
+      <label for="orderTotalCost">Total Cost</label>
+      <input type="number" class="form-control" [(ngModel)]="sum" id="orderTotalCost" placeholder="Total cost" readonly>
+
+    </div>
+    <div class="text-right col-sm-6 col-xs-12 col-md-6 align-self-center mt10">
+      <button type="submit" class="btn btn-primary" (click)="orderData(event)">Submit</button>
+    </div>
+  </div>
+</div>
