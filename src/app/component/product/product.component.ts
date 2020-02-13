@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { map } from 'rxjs/operators';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-product',
@@ -10,7 +10,7 @@ export class ProductComponent implements OnInit {
   company: any;
   objectsFromStorage: any;
   @Input() productDetail = { productName: '', companyName: '', productCost: 0 };
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     this.company = localStorage.getItem("companyDetail");
@@ -22,5 +22,6 @@ export class ProductComponent implements OnInit {
     productDetails = JSON.parse(localStorage.getItem('productDetail')) || [];
     productDetails.push(this.productDetail);
     localStorage.setItem('productDetail', JSON.stringify(productDetails));
+    this.router.navigate(["/order"]);
   }
 }

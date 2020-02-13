@@ -10,7 +10,7 @@ export class CompanyComponent implements OnInit {
 
   companyDetails = [];
   @Input() companyDetail = { companyName: '', companyGst: 0 };
-  constructor(private router: Router,) { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     let fromStorage = localStorage.getItem("orderDetails");
@@ -21,6 +21,8 @@ export class CompanyComponent implements OnInit {
     let details = [];
     details = JSON.parse(localStorage.getItem('companyDetail')) || [];
     details.push(this.companyDetail);
-    localStorage.setItem('companyDetail', JSON.stringify(details));  }
+    localStorage.setItem('companyDetail', JSON.stringify(details));
+    this.router.navigate(["/product"]);
+  }
 
 }
