@@ -10,7 +10,7 @@
   </button>
 </div>
 <div class="modal-body">
-  <div class="card">
+  <!-- <div class="card">
     <div class="card-header">
       <div class="row">
         <div class="col-6">
@@ -63,9 +63,32 @@
         </div>
       </div>
     </div>
+  </div> -->
+  <div class="table-responsive" id="pdfTable" #pdfTable>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Company</th>
+          <th scope="col">Product</th>
+          <th scope="col">Rate</th>
+          <th scope="col">Cost</th>
+          <th scope="col">Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{data.companyName}}</td>
+          <td>{{data.productName}}</td>
+          <td>{{data.rate}}</td>
+          <td>{{data.cost}}</td>
+          <td>{{data.totalCost}}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
 <div class="modal-footer">
+  <button class="btn btn-primary mr-2" (click)="downloadAsPDF()">Export To PDF</button>
   <button class="btn btn-success" redirec (click)="closeModal()">
     Submit
   </button>
